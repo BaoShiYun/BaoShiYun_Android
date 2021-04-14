@@ -1,0 +1,18 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.baoshiyun.live">
+
+    <application>
+        <activity
+            android:name="com.baoshiyun.demo.LiveStartActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.baoshiyun.demo.BsyLiveActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.baoshiyun.demo.BsyRoomActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/BSYAppThemeLive"
+            android:windowSoftInputMode="adjustNothing" />
+    </application>
+</manifest>

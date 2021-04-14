@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.baoshiyun.demo.chat.MessageLayout
+        android:layout_marginTop="5dp"
+        android:id="@+id/chat_message_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:baselineAligned="false"
+        android:clickable="false" />
+
+
+    <ImageView
+        android:id="@+id/chat_unread_msg_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:gravity="center"
+        android:src="@mipmap/bsyl_ic_chat_unread_msg_tips"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+</RelativeLayout>

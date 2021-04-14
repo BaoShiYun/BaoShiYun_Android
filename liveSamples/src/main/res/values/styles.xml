@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BSYAppThemeLive" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#000</item>
+        <item name="colorPrimaryDark">#000</item>
+        <item name="colorAccent">#FF6600</item>
+        <item name="android:windowBackground">#000</item>
+    </style>
+
+    <style name="AnimBottomToTop" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/anim_bottom_enter</item>
+        <item name="android:windowExitAnimation">@anim/anim_bottom_exit</item>
+    </style>
+
+    <style name="AnimWindowExit" parent="android:Animation">
+        <item name="android:windowExitAnimation">@anim/anim_bottom_exit</item>
+    </style>
+
+    <style name="BottomSheetDialogStyle" parent="Theme.AppCompat.Dialog">
+        <!-- 背景透明 原背景会有透明边，不能全屏显示-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 浮于Activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- Dialog以外的区域模糊效果 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.4</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- Dialog进入及退出动画 -->
+        <item name="android:windowAnimationStyle">@style/AnimBottomToTop</item>
+    </style>
+</resources>

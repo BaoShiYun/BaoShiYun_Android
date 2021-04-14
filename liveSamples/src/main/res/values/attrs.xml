@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BSYFlutteringLayout">
+        <attr name="fl_enter_duration" format="integer" />
+        <attr name="fl_duration" format="integer" />
+        <attr name="fl_scale" format="float" />
+        <attr name="fl_same_size" format="boolean" />
+        <attr name="fl_offset_x" format="dimension" />
+    </declare-styleable>
+</resources>

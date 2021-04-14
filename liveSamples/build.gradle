@@ -1,0 +1,50 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion build_versions.compileSdkVersion
+    buildToolsVersion build_versions.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion build_versions.minSdkVersion
+        targetSdkVersion build_versions.targetSdkVersion
+        versionCode 1
+        versionName "1.0.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    testImplementation deps.test.junit
+    androidTestImplementation deps.test.androidjunit
+    androidTestImplementation deps.test.espresso
+
+    implementation deps.support.annotations
+    implementation deps.support.core
+    implementation deps.support.appcompat
+    implementation deps.support.constraintlayout
+    implementation deps.support.recyclerview
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation 'com.flyco.roundview:FlycoRoundView_Lib:1.1.4@aar'
+    implementation 'com.github.SheHuan:NiceImageView:1.0.5'
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+
+    implementation "com.baoshiyun:bsy-sdk:$bsySdk_version"
+    implementation project(':bsy-chat-ui')
+}

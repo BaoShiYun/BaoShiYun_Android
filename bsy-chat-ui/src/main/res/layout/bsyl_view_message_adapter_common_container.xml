@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/emptyBody"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:paddingBottom="8dp">
+
+    <TextView
+        android:id="@+id/chat_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="7.98dp"
+        android:layout_marginBottom="20.58dp"
+        android:includeFontPadding="false"
+        android:textColor="#A5A5A5"
+        android:textSize="12.6sp"
+        android:visibility="gone"
+        android:text="12-3 18:30"
+        tools:visibility="visible" />
+
+    <FrameLayout
+        android:id="@+id/msg_content_fl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chat_time_tv" />
+
+</RelativeLayout>

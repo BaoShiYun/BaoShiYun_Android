@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="120dp"
+    android:layout_height="120dp">
+
+    <!--文字入口样式 竖屏120，横屏80 默认竖屏-->
+    <ImageView
+        android:id="@+id/live_shelf_image"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="bottom|right"
+        android:scaleType="fitXY" />
+
+    <!--图片入口样式-->
+    <com.flyco.roundview.RoundTextView
+        android:id="@+id/live_shelf_text"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_gravity="right|bottom"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:maxWidth="121dp"
+        android:maxLines="2"
+        android:paddingStart="8dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="4dp"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:rv_backgroundColor="#3A3A3C"
+        app:rv_cornerRadius="4dp"
+        tools:text="文本内容货架配置啦啦啦"
+        tools:visibility="visible" />
+
+
+</FrameLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.flyco.roundview.RoundLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:orientation="vertical"
+    app:rv_backgroundColor="#1C1C1E"
+    app:rv_cornerRadius="8dp">
+
+    <LinearLayout
+        android:id="@+id/live_more_function_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="75dp"
+        android:orientation="horizontal"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/live_more_switch_definition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="18dp"
+            android:drawableTop="@mipmap/ic_definition_change"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:text="切换清晰度"
+            android:textColor="#9d9fa7"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/live_more_switch_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:drawableTop="@mipmap/ic_route_change"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:text="切换线路"
+            android:textColor="#9d9fa7"
+            android:textSize="13sp" />
+
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/live_more_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="100dp"
+        android:padding="10dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/live_more_dialog_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#2c2c2c"
+        android:gravity="center"
+        android:text="取消"
+        android:textColor="#fff"
+        android:textSize="16sp" />
+</com.flyco.roundview.RoundLinearLayout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="bottom"
+    android:orientation="vertical"
+    tools:ignore="RtlCompat,RtlHardcoded">
+
+    <FrameLayout
+        android:id="@+id/inputLayoutEmptySpacView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/portraitRealInputLayout" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical" />
+
+    <RelativeLayout
+        android:id="@+id/portraitRealInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/moreLayout"
+        android:background="#1c1c1c"
+        android:maxHeight="64dp"
+        android:minHeight="59dp">
+
+        <com.flyco.roundview.RoundRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="12dp"
+            android:layout_toLeftOf="@id/portraitSendLayout"
+            app:rv_backgroundColor="#2c2c2c"
+            app:rv_cornerRadius="4dp">
+
+            <EditText
+                android:id="@+id/portraitRealContentEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/portraitRealFaceBtn"
+                android:background="@null"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:hint="请输入聊天内容"
+                android:imeOptions="flagNoExtractUi"
+                android:maxHeight="44dp"
+                android:maxLength="500"
+                android:minHeight="32dp"
+                android:paddingStart="8dp"
+                android:textColor="#FFF"
+                android:textColorHint="#99FFFFFF"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/portraitRealFaceBtn"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/bsyl_ic_input_normal" />
+        </com.flyco.roundview.RoundRelativeLayout>
+
+
+        <com.flyco.roundview.RoundFrameLayout
+            android:id="@+id/portraitSendLayout"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="12dp"
+            app:rv_isRadiusHalfHeight="true">
+
+            <Button
+                android:id="@+id/portraitSendBtn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bsyl_input_send"
+                android:enabled="false" />
+        </com.flyco.roundview.RoundFrameLayout>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/moreLayout"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_alignParentBottom="true"
+        android:background="#272727"
+        android:visibility="gone"
+        tools:visibility="visible" />
+</RelativeLayout>

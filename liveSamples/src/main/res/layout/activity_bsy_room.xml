@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0C0C0C"
+    android:orientation="vertical">
+
+    <!--顶部区域 互动区时为课件，live 时为视频-->
+    <FrameLayout
+        android:id="@+id/room_top_main_view"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:background="#1b1b1b" />
+    <!--上麦席位列表 live 时隐藏-->
+    <com.baoshiyun.demo.view.RoomVideosLayout
+        android:id="@+id/room_seat_video_container"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/room_top_main_view"
+        android:background="#434343" />
+    <!--聊天view-->
+    <com.baoshiyun.demo.chat.ChatLayout
+        android:id="@+id/room_chat_msg_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/room_seat_video_container"
+        android:layout_marginBottom="60dp" />
+
+    <!--直播间状态 view-->
+    <TextView
+        android:id="@+id/room_state_view"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:gravity="center"
+        android:padding="17dp"
+        android:text="直播未开始"
+        android:textColor="#fff" />
+    <!--直播间顶部bar-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/room_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_back_white" />
+
+        <TextView
+            android:id="@+id/room_title"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:textColor="#fff"
+            tools:text="直播间标题" />
+
+        <com.flyco.roundview.RoundTextView
+            android:id="@+id/room_online_number"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="12dp"
+            android:drawableStart="@mipmap/ic_online_number"
+            android:drawablePadding="4dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="0"
+            android:textColor="#99FFFFFF"
+            android:textSize="14sp"
+            android:visibility="gone"
+            app:rv_backgroundColor="#66000000"
+            app:rv_isRadiusHalfHeight="true"
+            tools:visibility="visible" />
+    </LinearLayout>
+    <!--直播间底部bar-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true">
+
+        <com.flyco.roundview.RoundTextView
+            android:id="@+id/room_input_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="12dp"
+            android:gravity="center"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="快来说两句吧…"
+            android:textColor="#66FFFFFF"
+            android:textSize="14sp"
+            app:rv_backgroundColor="#262626"
+            app:rv_isRadiusHalfHeight="true" />
+
+        <ImageView
+            android:id="@+id/room_more_btn"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_toRightOf="@+id/room_input_btn"
+            android:src="@mipmap/ic_more_menu" />
+
+    </RelativeLayout>
+
+
+    <!--货架悬浮入口-->
+    <com.baoshiyun.demo.view.ShelfLayout
+        android:id="@+id/room_shelf_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!--点赞飘心的 view-->
+    <com.baoshiyun.demo.view.GoodsButton
+        android:id="@+id/room_goods_button"
+        android:layout_width="113dp"
+        android:layout_height="150dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        app:fl_offset_x="12dp"
+        tools:background="#33FFFFFF" />
+
+    <!--聊天输入框-->
+    <com.baoshiyun.demo.chat.input.RtcRealInputLayout
+        android:id="@+id/room_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+</RelativeLayout>

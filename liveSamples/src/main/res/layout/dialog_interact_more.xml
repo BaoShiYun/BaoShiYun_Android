@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.flyco.roundview.RoundRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    app:rv_backgroundColor="#1C1C1E"
+    app:rv_cornerRadius_TL="8dp"
+    app:rv_cornerRadius_TR="8dp">
+
+    <com.flyco.roundview.RoundTextView
+        android:id="@+id/interact_dialog_raise_hand_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:minWidth="56dp"
+        android:padding="10dp"
+        android:text="举手"
+        android:textColor="#fff"
+        android:textSize="16sp"
+        app:rv_backgroundColor="#424242"
+        app:rv_isRadiusHalfHeight="true" />
+
+
+    <TextView
+        android:id="@+id/interact_dialog_camera_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="50dp"
+        android:layout_toLeftOf="@id/interact_dialog_raise_hand_btn"
+        android:drawableTop="@mipmap/ic_interact_camera_disable"
+        android:drawablePadding="8dp"
+        android:paddingTop="30dp"
+        android:textSize="14sp"
+        tools:text="已禁用" />
+
+    <TextView
+        android:id="@+id/interact_dialog_mic_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="50dp"
+        android:layout_toRightOf="@id/interact_dialog_raise_hand_btn"
+        android:drawableTop="@mipmap/ic_interact_mic_disable"
+        android:drawablePadding="8dp"
+        android:paddingTop="30dp"
+        android:textSize="14sp"
+        tools:text="已禁用" />
+
+</com.flyco.roundview.RoundRelativeLayout>

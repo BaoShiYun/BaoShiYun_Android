@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.flyco.roundview.RoundLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/chatTextLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="12dp"
+    android:layout_marginRight="12dp"
+    android:minHeight="27dp"
+    android:orientation="horizontal"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    app:rv_backgroundColor="#282828"
+    app:rv_cornerRadius="4dp">
+
+    <com.flyco.roundview.RoundTextView
+        android:id="@+id/chatContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center_vertical"
+        android:lineSpacingExtra="4dp"
+        android:maxLines="300"
+        android:textSize="14sp"
+        tools:text="包主任" />
+</com.flyco.roundview.RoundLinearLayout>

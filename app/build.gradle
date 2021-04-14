@@ -1,0 +1,53 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion build_versions.compileSdkVersion
+    buildToolsVersion build_versions.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.baoshiyun.demo"
+        minSdkVersion build_versions.minSdkVersion
+        targetSdkVersion build_versions.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            abiFilters 'armeabi-v7a'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    testImplementation deps.test.junit
+    androidTestImplementation deps.test.androidjunit
+    androidTestImplementation deps.test.espresso
+
+    implementation deps.support.core
+    implementation deps.support.appcompat
+    implementation deps.support.constraintlayout
+    implementation deps.support.recyclerview
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    implementation "com.google.code.gson:gson:2.8.2"
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    implementation "com.baoshiyun:bsy-sdk:$bsySdk_version"
+    implementation project(':videoSamples')
+    implementation project(':liveSamples')
+}

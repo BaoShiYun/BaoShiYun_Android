@@ -45,10 +45,11 @@ allprojects {
         jcenter()
         // 添加以下内容-抱石云的 github 制品仓库
         maven {
-            url = "https://maven.pkg.github.com/BaoShiYun/bsySdkAndroid/"
+            url = "https://maven.pkg.github.com/BaoShiYun/BaoShiYun-Android/"
             credentials {
                 // 抱石云仓库的秘钥 必须添加
-                password = "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"
+                username = "BaoShiYun"
+                password = "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"
             }
         }
     }
@@ -71,7 +72,7 @@ android {
 dependencies {
     // 添加依赖
     // 数字请根据最新版自行添加
-    implementation ('com.baoshiyun:bsy-sdk:1.0.0')
+    implementation ('com.baoshiyun:bsy-sdk:1.0')
     // okhttp和gson 与本地版本冲突时可以排除依赖
     // {
     //    exclude module: 'okhttp'

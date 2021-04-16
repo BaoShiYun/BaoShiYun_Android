@@ -2,7 +2,6 @@ package com.baoshiyun.demo;
 
 import android.content.Context;
 
-import com.baoshiyun.warrior.core.utils.MD5Utils;
 
 import java.io.File;
 

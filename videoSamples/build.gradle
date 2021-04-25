@@ -30,6 +30,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
     testImplementation deps.test.junit
     androidTestImplementation deps.test.androidjunit
@@ -41,4 +42,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     implementation "com.baoshiyun:bsy-sdk:$bsySdk_version"
+
+    implementation "com.google.android.material:material:1.0.0"
+    implementation 'com.flyco.roundview:FlycoRoundView_Lib:1.1.4@aar'
 }

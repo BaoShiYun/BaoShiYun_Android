@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:orientation="vertical"
+    android:paddingLeft="17dp"
+    android:paddingTop="8dp"
+    android:paddingRight="17dp">
+
+    <TextView
+        android:id="@+id/item_video_download_status"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        tools:text="下载" />
+
+    <TextView
+        android:id="@+id/item_video_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/item_video_download_status"
+        android:textColor="#222"
+        tools:text="视频标题" />
+
+    <TextView
+        android:id="@+id/item_video_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_video_title"
+        android:layout_marginTop="5dp"
+        android:layout_toLeftOf="@id/item_video_download_status"
+        tools:text="视频id" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@id/item_video_id"
+        android:layout_marginTop="8dp"
+        android:background="#ccc" />
+
+    <ProgressBar
+        android:id="@+id/item_video_download_progress"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/item_video_id"
+        android:layout_marginTop="8dp"
+        android:max="100" />
+</RelativeLayout>

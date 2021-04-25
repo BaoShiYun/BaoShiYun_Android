@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BSYPlayerTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimaryDark">#000</item>
+        <item name="colorPrimary">#000</item>
+        <item name="android:colorBackground">#000</item>
+    </style>
+
+    <style name="BSYPlayBottomTextViewStyle" parent="android:Widget.Holo.Light.TextView">
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:textColor">#FFF</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:paddingLeft">11dp</item>
+        <item name="android:paddingRight">11dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="BSY_player_ui_popwin_anim_style">
+        <item name="android:windowEnterAnimation">@anim/bsyv_anim_right_enter</item>
+        <item name="android:windowExitAnimation">@anim/bsyv_anim_right_exit</item>
+    </style>
+</resources>

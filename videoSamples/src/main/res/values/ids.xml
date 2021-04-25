@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--AnimUtils 使用，停止动画使用-->
+    <item name="value_anim_tag" type="id" />
+</resources>

@@ -1,4 +1,4 @@
-package com.baoshiyun.demo;
+package com.baoshiyun.demo.utils;
 
 import java.io.File;
 import java.io.FileInputStream;

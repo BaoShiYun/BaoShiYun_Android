@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?><!--视频播放 view 集成所有功能-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1A1E26">
+
+    <com.baoshiyun.demo.video.BSYVideoView
+        android:id="@+id/player_video_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center" />
+
+    <com.baoshiyun.demo.video.controller.MediaPlayerController
+        android:id="@+id/player_media_controller"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center" />
+
+    <LinearLayout
+        android:id="@+id/player_buffering_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <ProgressBar
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/bsyv_p_buffering"
+            android:textColor="#FFF"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!--清晰度切换提示view-->
+    <com.flyco.roundview.RoundTextView
+        android:id="@+id/player_toast_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="18dp"
+        android:layout_marginBottom="65dp"
+        android:gravity="center"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textColor="#FFF"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:rv_backgroundColor="#88000000"
+        app:rv_isRadiusHalfHeight="true" />
+
+
+    <com.baoshiyun.demo.video.controller.PlayerStatusLayout
+        android:id="@+id/player_status_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+</FrameLayout>

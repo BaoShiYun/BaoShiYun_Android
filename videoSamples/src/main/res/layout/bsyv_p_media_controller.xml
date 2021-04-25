@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.baoshiyun.demo.video.controller.MPBottomBar
+        android:id="@+id/mc_bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <com.baoshiyun.demo.video.controller.MPTopBar
+        android:id="@+id/mc_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <com.flyco.roundview.RoundLinearLayout
+        android:id="@+id/mc_gesture_progress_bar_container"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:background="#88000000"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:visibility="gone"
+        app:rv_backgroundColor="#88000000"
+        app:rv_isRadiusHalfHeight="true"
+        tools:visibility="visible">
+
+        <ImageView
+            android:id="@+id/mc_gesture_type_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="center"
+            android:src="@mipmap/bsyv_p_ic_brightnes_high" />
+
+        <ProgressBar
+            android:id="@+id/mc_gesture_progress_bar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="130dp"
+            android:layout_height="2dp"
+            android:layout_marginLeft="6dp"
+            android:maxHeight="2dp"
+            android:minHeight="2dp"
+            android:progressDrawable="@drawable/bsyv_p_ui_seekbar_drawable"
+            android:thumbOffset="0dp"
+            android:visibility="gone"
+            tools:progress="30" />
+
+        <TextView
+            android:id="@+id/mc_gesture_progress_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:paddingBottom="1dp"
+            android:textColor="#FFF"
+            android:textSize="13sp"
+            tools:text="09:00:233" />
+
+    </com.flyco.roundview.RoundLinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mc_middle_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|right"
+        android:layout_marginRight="19dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <ImageView
+            android:id="@+id/mc_lock"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="center"
+            android:src="@drawable/bsyv_p_ui_lock_bg"
+            tools:visibility="visible" />
+    </LinearLayout>
+</FrameLayout>

@@ -1,4 +1,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.baoshiyun.video">
 
+    <application>
+        <activity
+            android:name="com.baoshiyun.demo.VideoListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.baoshiyun.demo.video.BSYPlayerActivity"
+            android:configChanges="screenSize|keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/BSYPlayerTheme" />
+    </application>
 </manifest>

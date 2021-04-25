@@ -6,9 +6,6 @@
             android:name="com.baoshiyun.demo.LiveStartActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.baoshiyun.demo.BsyLiveActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name="com.baoshiyun.demo.BsyRoomActivity"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
             android:screenOrientation="portrait"

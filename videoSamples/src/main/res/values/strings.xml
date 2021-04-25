@@ -1,0 +1,53 @@
+<resources>
+
+    <string name="bsyv_screen_locked">屏幕已锁定</string>
+
+    <string name="bsyv_d_edit">编辑</string>
+    <string name="bsyv_d_unedit">取消</string>
+    <string name="bsyv_d_my_download_title">离线下载</string>
+    <string name="bsyv_d_my_download_total_size">已缓存%1s/剩余%2s空间</string>
+    <string name="bsyv_d_downloading">下载中</string>
+    <string name="bsyv_d_all_start">全部开始</string>
+    <string name="bsyv_d_all_pause">全部暂停</string>
+
+    <string name="bsyv_d_chapter_index">第%1s章&#160;&#160;%2s</string>
+    <string name="bsyv_d_section_index">第%1s节&#160;&#160;%2s</string>
+    <string name="bsyv_d_content_index">第%1s章第%1s节: </string>
+    <string name="bsyv_d_all_select">全选</string>
+    <string name="bsyv_d_all_unselect">取消全选</string>
+    <string name="bsyv_d_delete">删除</string>
+    <string name="bsyv_d_part">片段</string>
+
+    <string name="bsyv_d_is_empty">暂无离线内容</string>
+    <string name="bsyv_d_delete_msg">确定删除选中的课程内容吗？</string>
+    <string name="bsyv_d_delete_title">删除</string>
+
+
+    <string name="bsyv_p_buffering">正在缓冲...</string>
+    <string name="bsyv_p_prepare_video">正在为你准备课程中...</string>
+    <string name="bsyv_p_play_next">下一片段</string>
+    <string name="bsyv_p_resume">继续观看</string>
+    <string name="bsyv_p_use_4g_tips">正在使用非WiFi网络，播放将产生流量费用</string>
+    <string name="bsyv_p_exit">退出</string>
+    <string name="bsyv_p_replay">重新播放</string>
+    <string name="bsyv_p_complete">视频播放完成</string>
+    <string name="bsyv_p_reload">重新加载</string>
+    <string name="bsyv_p_video_playlist">片段</string>
+    <string name="bsyv_p_video_speed">倍速</string>
+    <string name="bsyv_p_video_high_definition">高清</string>
+
+
+    <string name="bsyv_p_do_pause_anim_path">lottie/player/doPause.json</string>
+    <string name="bsyv_p_do_play_anim_path">lottie/player/doPlay.json</string>
+    <string name="bsyv_p_audio_tips">在锁屏和切到后台时也能继续播放音频</string>
+    <string name="bsyv_p_switch_video">返回视频</string>
+    <string name="bsyv_p_gesture_progress_time"><![CDATA[<font color=\"#00CAFF\">%1s</font> / %2s]]></string>
+    <string name="bsyv_p_select_play_item">选片段</string>
+    <string name="bsyv_p_speed_tips"><![CDATA[已为您切换至<font color=\"#00CAFF\">%1s倍速</font>播放]]></string>
+    <string name="bsyv_p_error_tips">视频内容加载失败</string>
+    <string name="bsyv_p_part_tips"><![CDATA[正在为您切换<font color=\"#00CAFF\">片段%1d</font>]]></string>
+    <string name="bsyv_p_definition_tips"> <![CDATA[正在为您切换<font color="#00CAFF">%1s</font>画质]]></string>
+    <string name="bsyv_p_history_tips"><![CDATA[记忆您上次学到&#160;<font color="#00CAFF">%1s</font>]]></string>
+    <string name="bsyv_p_not_support_speed">此系统版本不支持调整倍速</string>
+    <string name="bsyv_p_not_definitions">没有清晰度列表可以选择</string>
+</resources>

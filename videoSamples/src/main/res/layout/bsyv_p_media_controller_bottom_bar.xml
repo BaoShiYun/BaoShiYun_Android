@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mc_bottom_bar_root_view"
+    android:layout_width="fill_parent"
+    android:layout_height="164dp"
+    android:background="@mipmap/bsyv_p_bg_bottom">
+
+    <LinearLayout
+        android:id="@+id/mc_bottom_bar_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
+
+        <SeekBar
+            android:id="@+id/mc_bottom_bar_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="2dp"
+            android:minHeight="2dp"
+            android:paddingLeft="18dp"
+            android:paddingTop="5dp"
+            android:paddingRight="18dp"
+            android:paddingBottom="5dp"
+            android:progressDrawable="@drawable/bsyv_p_ui_seekbar_drawable"
+            android:thumb="@mipmap/bsyv_p_ic_seekbar_thumb"
+            android:thumbOffset="0dp"
+            tools:progress="10"
+            tools:secondaryProgress="70" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="14dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/mc_bottom_bar_prev"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:scaleType="center"
+                    android:src="@mipmap/bsyv_p_ic_prev"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/mc_bottom_bar_play"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@android:drawable/ic_media_pause" />
+
+                <ImageView
+                    android:id="@+id/mc_bottom_bar_next"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:scaleType="center"
+                    android:src="@mipmap/bsyv_p_ic_next"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/mc_bottom_bar_time_current"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="21dp"
+                    android:textColor="#FFF"
+                    android:textSize="12sp"
+                    tools:text="01:06:08 / 02:30:12" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical|right"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <!-- 倍速播放选择 -->
+                <TextView
+                    android:id="@+id/mc_bottom_bar_speed_play"
+                    style="@style/BSYPlayBottomTextViewStyle"
+                    android:text="@string/bsyv_p_video_speed" />
+
+                <TextView
+                    android:id="@+id/mc_bottom_bar_definition"
+                    style="@style/BSYPlayBottomTextViewStyle"
+                    android:text="@string/bsyv_p_video_high_definition" />
+
+                <ImageView
+                    android:id="@+id/mc_bottom_bar_fullscreen"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="9dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:scaleType="center"
+                    android:src="@mipmap/bsyv_p_ic_fullscreen_open"
+                    android:visibility="visible" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+</FrameLayout>

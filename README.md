@@ -49,7 +49,7 @@ allprojects {
             credentials {
                 // 抱石云仓库的秘钥 必须添加
                 username = "BaoShiYun"
-                password = "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"
+                password = "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"
             }
         }
     }

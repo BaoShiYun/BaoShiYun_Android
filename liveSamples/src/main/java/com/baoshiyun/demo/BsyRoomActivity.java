@@ -91,7 +91,7 @@ public class BsyRoomActivity extends AppCompatActivity {
         // im 图标加载
         FaceManager.loadFaceFiles(this);
 
-        mBsyRoomSdk = BSYRoomSdk.createInstance(this,enterParams);
+        mBsyRoomSdk = BSYRoomSdk.createInstance(this, enterParams);
         mBsyRoomSdk.addHandler(new EventListener());
 
         // 请求权限后进入直播间
@@ -263,6 +263,15 @@ public class BsyRoomActivity extends AppCompatActivity {
         public void onEnterRoomFail(int code, String msg) {
             super.onEnterRoomFail(code, msg);
             showEnterFailDialog(code, msg);
+        }
+
+        /**
+         * 直播token 过期，需要重新进入直播间
+         */
+        @Override
+        public void onTokenInvalid() {
+            super.onTokenInvalid();
+            showTokenInvalidDialog();
         }
 
         /**
@@ -738,6 +747,17 @@ public class BsyRoomActivity extends AppCompatActivity {
     private void showEnterFailDialog(int code, String msg) {
         new AlertDialog.Builder(this)
                 .setMessage("进入直播间失败 code:" + code + ", msg:" + msg)
+                .setCancelable(false)
+                .setPositiveButton("退出", (dialog, which) -> finish())
+                .show();
+    }
+
+    /**
+     * 直播间 token 过期
+     */
+    private void showTokenInvalidDialog() {
+        new AlertDialog.Builder(this)
+                .setMessage("直播间token过期，请退出重新进入直播间")
                 .setCancelable(false)
                 .setPositiveButton("退出", (dialog, which) -> finish())
                 .show();

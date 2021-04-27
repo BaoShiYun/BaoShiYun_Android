@@ -30,6 +30,8 @@ import java.util.List;
  */
 public class VideoListActivity extends AppCompatActivity {
     public static final String BSY_TENANT_ID = "bsy_tenant_id";
+    public static final String BSY_USER_ID = "bsy_user_id";
+    public static final String BSY_ACCESS_TOKEN = "bsy_access_token";
     private RecyclerView mRecyclerView;
     private List<VideoItem> videoList = new ArrayList<>();
 
@@ -42,11 +44,15 @@ public class VideoListActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         videoList.add(new VideoItem("第一个视频", "media-848899839229952"));
-        videoList.add(new VideoItem("第一个视频", "media-847045725388800"));
         videoList.add(new VideoItem("第一个视频", "media-848899856007168"));
         videoList.add(new VideoItem("第一个视频", "media-848899874390016"));
 
         mRecyclerView.setAdapter(new Adapter());
+
+        // 设置授权是数据
+        AuthorizationManager.tenantId = getIntent().getStringExtra(BSY_TENANT_ID);
+        AuthorizationManager.userId = getIntent().getStringExtra(BSY_USER_ID);
+        AuthorizationManager.accessToken = getIntent().getStringExtra(BSY_ACCESS_TOKEN);
     }
 
     class Adapter extends RecyclerView.Adapter<ViewHolder> {

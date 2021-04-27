@@ -1,3 +1,6 @@
 <resources>
-    <string name="tenantId">6144761050</string>
+    <!--抱石云申请的租户id-->
+    <string name="tenantId">9492499110</string>
+    <!--使用点播视频时临时申请的token-->
+    <string name="accessstoken">bsy1000000000007.1619159466586.9762126cb036435cada02e293afdef4b.9492499110</string>
 </resources>

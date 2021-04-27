@@ -18,7 +18,7 @@ public class BSYApplication extends Application {
         application = this;
         // 初始化抱石云sdk
         BSYSdk.BSYSdkConfig bsySdkConfig = new BSYSdk.BSYSdkConfig(this)
-                .setRunMode(RunMode.TEST)
+                .setRunMode(RunMode.ONLINE)
                 .debug(true);
         BSYSdk.init(bsySdkConfig);
     }

@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
  * Created by liujunting on 2020-10-16.
  */
 public class MainActivity extends AppCompatActivity {
+    String userId = "10010";
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.playlist).setOnClickListener(v -> {
             Intent intent = new Intent(this, VideoListActivity.class);
             intent.putExtra(VideoListActivity.BSY_TENANT_ID, getString(R.string.tenantId));
+            intent.putExtra(VideoListActivity.BSY_USER_ID, userId);
+            intent.putExtra(VideoListActivity.BSY_ACCESS_TOKEN, getString(R.string.accessstoken));
             MainActivity.this.startActivity(intent);
         });
 

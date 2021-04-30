@@ -18,7 +18,7 @@ import com.baoshiyun.demo.AuthorizationManager;
 import com.baoshiyun.demo.video.controller.MediaPlayerController;
 import com.baoshiyun.warrior.core.NetWatchDog;
 import com.baoshiyun.warrior.video.Definition;
-import com.baoshiyun.warrior.video.player.BSYMediaPlayer;
+import com.baoshiyun.warrior.video.player.BSYPlayerFactory;
 import com.baoshiyun.warrior.video.player.IMediaPlayer;
 import com.baoshiyun.warrior.video.player.exception.BSYPlayException;
 import com.baoshiyun.warrior.video.player.exception.ErrorCode;
@@ -259,7 +259,7 @@ public class BSYVideoView extends SurfaceView implements MediaPlayerController.I
         try {
             final Context context = getContext();
             if (mMediaPlayer == null) {
-                mMediaPlayer = new BSYMediaPlayer(
+                mMediaPlayer = BSYPlayerFactory.createMediaPlayer(
                         AuthorizationManager.accessToken,
                         AuthorizationManager.tenantId,
                         AuthorizationManager.userId);

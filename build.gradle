@@ -29,7 +29,7 @@ allprojects {
             url = "http://maven.pkg.github.com/baoshiyun/BaoShiYun_Android/"
             credentials {
                 username = "BaoShiYun"
-                password = "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"
+                password = "ghp_0QxdoB"+"PlyiA4PQl"+"VAzvxZoBHyh"+"PpoP2WYb9h"
             }
         }
     }

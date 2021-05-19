@@ -72,12 +72,7 @@ android {
 dependencies {
     // 添加依赖
     // 数字请根据最新版自行添加
-    implementation ('com.baoshiyun:bsy-sdk:1.0')
-    // okhttp和gson 与本地版本冲突时可以排除依赖
-    // {
-    //    exclude module: 'okhttp'
-    //    exclude module: 'gson'
-    // }
+    implementation ('com.baoshiyun:bsy-sdk:1.0.1')
 }
 ```
 

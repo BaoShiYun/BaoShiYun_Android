@@ -2,7 +2,7 @@
 buildscript {
     apply from: 'config.gradle'
     ext.kotlin_version = "1.4.10"
-    ext.bsySdk_version = "1.0.1"
+    ext.bsySdk_version = "1.1.1"
     repositories {
         jcenter()
         google()

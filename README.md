@@ -25,7 +25,7 @@
 
 
 # 2.集成开发
-[最新release](https://github.com/BaoShiYun/bsySdkAndroid/packages)
+[最新 release 版本 sdk](https://github.com/BaoShiYun/bsySdkAndroid/packages)
 
 ## 前提条件
 1. Android Studio
@@ -72,7 +72,7 @@ android {
 dependencies {
     // 添加依赖
     // 数字请根据最新版自行添加
-    implementation ('com.baoshiyun:bsy-sdk:1.0.1')
+    implementation ('com.baoshiyun:bsy-sdk:1.1.1')
 }
 ```
 

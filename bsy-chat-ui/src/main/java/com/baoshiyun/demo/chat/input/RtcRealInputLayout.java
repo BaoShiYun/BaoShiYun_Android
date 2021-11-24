@@ -28,7 +28,6 @@ import com.baoshiyun.demo.chat.face.ScreenUtil;
 import com.baoshiyun.demo.chat.keyboard.KeyboardHeightObserver;
 import com.baoshiyun.warrior.im.MessageInfo;
 import com.baoshiyun.warrior.im.base.IMKitCallback;
-import com.baoshiyun.warrior.im.utils.MessageInfoUtil;
 
 public class RtcRealInputLayout extends FrameLayout implements TextWatcher, KeyboardHeightObserver {
 
@@ -142,7 +141,7 @@ public class RtcRealInputLayout extends FrameLayout implements TextWatcher, Keyb
             return;
         }
         if (mMessageHandler != null) {
-            mMessageHandler.sendMessage(MessageInfoUtil.buildTextMessage(content), new IMKitCallback() {
+            mMessageHandler.sendMessage(content, new IMKitCallback() {
                 @Override
                 public void onSuccess(Object data) {
                     mRealContentEdit.setText("");
@@ -336,7 +335,7 @@ public class RtcRealInputLayout extends FrameLayout implements TextWatcher, Keyb
 
 
     public interface MessageHandler {
-        void sendMessage(MessageInfo msg, IMKitCallback<MessageInfo> callback);
+        void sendMessage(String msg, IMKitCallback<MessageInfo> callback);
     }
 
 

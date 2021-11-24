@@ -2,7 +2,7 @@
 buildscript {
     apply from: 'config.gradle'
     ext.kotlin_version = "1.4.10"
-    ext.bsySdk_version = "1.1.1"
+    ext.bsySdk_version = "1.2.1"
     repositories {
         jcenter()
         google()
@@ -20,6 +20,7 @@ allprojects {
     repositories {
         // github 库使用
         maven { url "https://jitpack.io" }
+        maven { url "https://www.jitpack.io" }
         maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
         jcenter()
         google()

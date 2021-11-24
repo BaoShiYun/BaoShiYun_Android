@@ -211,10 +211,10 @@ public class BsyRoomActivity extends AppCompatActivity {
      * @param isRetry  是否重试
      * @param callback 回调
      */
-    private void sendMessage(MessageInfo message, boolean isRetry, IMKitCallback callback) {
+    private void sendMessage(String message, boolean isRetry, IMKitCallback callback) {
         // 先添加的数据表，失败或者成功再更新
-        mChatMsgView.addMessage(message);
-        mBsyRoomSdk.sendChatMessage(message, false, new IMKitCallback<MessageInfo>() {
+
+        MessageInfo messageInfo = mBsyRoomSdk.sendChatMessage(message,null, new IMKitCallback<MessageInfo>() {
             @Override
             public void onSuccess(MessageInfo data) {
                 if (callback != null) {
@@ -228,9 +228,9 @@ public class BsyRoomActivity extends AppCompatActivity {
                 if (callback != null) {
                     callback.onError(module, errCode, errMsg);
                 }
-                mChatMsgView.updateMessage(message);
             }
         });
+        mChatMsgView.addMessage(messageInfo);
 
     }
     // endregion

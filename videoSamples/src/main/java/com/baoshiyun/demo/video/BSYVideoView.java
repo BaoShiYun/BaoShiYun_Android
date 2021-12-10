@@ -70,7 +70,7 @@ public class BSYVideoView extends SurfaceView implements MediaPlayerController.I
     private IMediaPlayer.OnCompletionListener mOnCompletionListener;
     private IMediaPlayer.OnPreparedListener mOnPreparedListener;
     private int mCurrentBufferPercentage;
-    private IMediaPlayer.onPlayErrorListener mOnErrorListener;
+    private onPlayErrorListener mOnErrorListener;
     private IMediaPlayer.OnInfoListener mOnInfoListener;
     private int mSeekWhenPrepared;  // recording the seek position while preparing
     private boolean mCanPause;
@@ -277,7 +277,6 @@ public class BSYVideoView extends SurfaceView implements MediaPlayerController.I
             mMediaPlayer.setOnVideoSizeChangedListener(mSizeChangedListener);
             mMediaPlayer.setOnCompletionListener(mCompletionListener);
             mMediaPlayer.setOnErrorListener(mErrorListener);
-            mMediaPlayer.setOnPlayErrorListener(mInnerOnPlayErrorListener);
             mMediaPlayer.setOnInfoListener(mInfoListener);
             mMediaPlayer.setOnBufferingUpdateListener(mBufferingUpdateListener);
             mCurrentBufferPercentage = 0;
@@ -499,17 +498,6 @@ public class BSYVideoView extends SurfaceView implements MediaPlayerController.I
                     return true;
                 }
             };
-    private IMediaPlayer.onPlayErrorListener mInnerOnPlayErrorListener =
-            new IMediaPlayer.onPlayErrorListener() {
-                @Override
-                public boolean onError(IMediaPlayer mp, BSYPlayException e) {
-                    VideoLog.w(TAG, "onError e:" + e.toString());
-                    if (mOnErrorListener != null) {
-                        return mOnErrorListener.onError(mp, e);
-                    }
-                    return true;
-                }
-            };
 
     private IMediaPlayer.OnErrorListener mErrorListener =
             new IMediaPlayer.OnErrorListener() {
@@ -616,7 +604,7 @@ public class BSYVideoView extends SurfaceView implements MediaPlayerController.I
      *
      * @param l The callback that will be run
      */
-    public void setOnErrorListener(IMediaPlayer.onPlayErrorListener l) {
+    public void setOnErrorListener(onPlayErrorListener l) {
         mOnErrorListener = l;
     }
 
@@ -967,5 +955,18 @@ public class BSYVideoView extends SurfaceView implements MediaPlayerController.I
 
             }
         }
+    }
+
+    /**
+     * 播放器播放之前的错误回调
+     */
+    public interface onPlayErrorListener {
+        /**
+         * 准备播放数据时，发生错误
+         *
+         * @param mp
+         * @param e  错误信息
+         */
+        boolean onError(IMediaPlayer mp, BSYPlayException e);
     }
 }

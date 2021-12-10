@@ -214,7 +214,7 @@ public class BsyRoomActivity extends AppCompatActivity {
     private void sendMessage(String message, boolean isRetry, IMKitCallback callback) {
         // 先添加的数据表，失败或者成功再更新
 
-        MessageInfo messageInfo = mBsyRoomSdk.sendChatMessage(message,null, new IMKitCallback<MessageInfo>() {
+        MessageInfo messageInfo = mBsyRoomSdk.sendChatMessage(message, null, new IMKitCallback<MessageInfo>() {
             @Override
             public void onSuccess(MessageInfo data) {
                 if (callback != null) {
@@ -295,11 +295,12 @@ public class BsyRoomActivity extends AppCompatActivity {
         /**
          * 收到口令红包活动
          *
+         * @param activityId
          * @param activityUrl
          */
         @Override
-        public void onReceiveActivity(String activityUrl) {
-            super.onReceiveActivity(activityUrl);
+        public void onReceiveActivity(String activityId, String activityUrl) {
+            super.onReceiveActivity(activityId, activityUrl);
             showWebDialog(activityUrl);
         }
 

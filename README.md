@@ -23,15 +23,17 @@
 | 在线人数 | 支持直播间在线人数及是否展示在线人数                |
 | 广播    | 支持广播链接                                     |
 
-
 # 2.集成开发
+
 [最新 release 版本 sdk](https://github.com/BaoShiYun/bsySdkAndroid/packages)
 
 ## 前提条件
+
 1. Android Studio
 2. API 19+
 
 ## 获取所需要的信息
+
 1. 阅读 应用与权限，获取 SDK Token
 
 ## 集成 SDK 到项目中
@@ -39,17 +41,22 @@
 ### build.gradle 配置
 
 1.打开根目录下的 build.gradle 进行如下标准配置：
+
 ```groovy
 allprojects {
     repositories {
+        // github 库使用
+        maven { url "https://jitpack.io" }
+        maven { url "https://www.jitpack.io" }
         jcenter()
-        // 添加以下内容-抱石云的 github 制品仓库
+        google()
+
+        // 远程sdk仓库
         maven {
-            url = "https://maven.pkg.github.com/BaoShiYun/BaoShiYun-Android/"
+            url = "http://maven.pkg.github.com/baoshiyun/BaoShiYun_Android/"
             credentials {
-                // 抱石云仓库的秘钥 必须添加
                 username = "BaoShiYun"
-                password = "ghp_0QxdoB"+"PlyiA4PQl"+"VAzvxZoBHyh"+"PpoP2WYb9h"
+                password = "ghp_0QxdoB" + "PlyiA4PQl" + "VAzvxZoBHyh" + "PpoP2WYb9h"
             }
         }
     }
@@ -57,31 +64,34 @@ allprojects {
 ```
 
 2.打开 app 目录下的 build.gradle 进行如下配置：
+
 ```groovy
 android {
-     ***
+    ** *
     defaultConfig {
-      ***
-      // 根据自己项目需求添加动态库过滤配置
-      // abiFilters 'armeabi', 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a', 'armeabi-v7a'
+        ** *
+        // 根据自己项目需求添加动态库过滤配置
+        // abiFilters 'armeabi', 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a', 'armeabi-v7a'
         ndk {
-            abiFilters 'armeabi-v7a'
+            abiFilters 'armeabi-v7a', 'arm64-v8a'
         }
     }
 }
 dependencies {
     // 添加依赖
     // 数字请根据最新版自行添加
-    implementation ('com.baoshiyun:bsy-sdk:1.2.1'){
+    implementation('com.baoshiyun:bsy-sdk:1.2.6') {
         // 依赖库版本有冲突可以排除 相应依赖
         //        exclude module: 'okhttp'
         //        exclude module: 'gson'
-     }
+    }
 }
 ```
 
 ### Permission 配置
+
 打开 app 目录下的 AndroidManifest.xml 进行如下配置：
+
 ``` xml
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
@@ -97,6 +107,7 @@ dependencies {
 ```
 
 ### Proguard 配置
+
 ```bash
 # 抱石云 sdk model
 -keep class com.baoshiyun.**{*;}
@@ -109,15 +120,19 @@ dependencies {
 -keep class com.google.gson.stream.** { *; }
 # Application classes that will be serialized/deserialized over Gson
 -keep class com.google.gson.examples.android.model.** { *; }
--keep class com.google.gson.** { *;}
+-keep class com.google.gson.** { *;
 # 声网 sdk model
 -keep class io.agora.** { *;}
 # 腾讯 sdk model
 -keep class com.tencent.**{*;}
+# ijk 配置
+-keep class tv.danmaku.ijk.media.player.**{*;}
 ```
 
 ### 初始化
+
 在 Application onCreate() 方法中初始化 抱石云 sdk
+
 ``` java
 BSYSdk.BSYSdkConfig bsySdkConfig = new BSYSdk.BSYSdkConfig(applicationContext)
     .debug(Boolean) // 是否打印调试日志 
